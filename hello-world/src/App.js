@@ -6,15 +6,23 @@ import { Vanakkam } from './Components/Greet'
 import Welcome from './Components/WelcomeClass'
 // import Message from './Components/Message'
 import Counter from './Components/Counter'
+import FunctionClick from './Components/FunctionClick'
+import ClassClick from './Components/ClassClick'
+import EventBind from './Components/EventBind'
+import ParentComponent from './Components/ParentComponent'
 
 function App() {
   return (
     <div className="App">
+      <ParentComponent/>
+    {/*  <FunctionClick/>
+      <ClassClick/>
+      <EventBind/>
       <Vanakkam name="ACPRAJ" spouse="Niveda"></Vanakkam>
       <Welcome name="Niveda" spouse="Pradheep">
         <p>This text is italicised</p>
       </Welcome>
-      {/* <Counter/>
+      <Counter/>
       <Message></Message>
       <Greetings/>
       
