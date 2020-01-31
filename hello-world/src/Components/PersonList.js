@@ -24,7 +24,7 @@ function PersonList() {
     ]
     return (
         <div>
-            { person.map(x => <Person propsPerson = { x }/>) }
+            { person.map(x => <Person key={ x.id } propsPerson = { x }/>) }
             
         </div>
     )

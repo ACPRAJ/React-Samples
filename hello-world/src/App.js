@@ -12,12 +12,20 @@ import EventBind from './Components/EventBind'
 import ParentComponent from './Components/ParentComponent'
 import GreetUser from './Components/GreetUser'
 import PersonList from './Components/PersonList';
+import CssStyles from './Components/CssStyles'
+import InlineStyle from './Components/InlineStyle';
+import "./Styles/AppStyles.css"
+import Styles from "./Styles/AppStyles.module.css"
 
 function App() {
   return (
     <div className="App">
-      <PersonList/>
-    {/*  <GreetUser/>
+      <CssStyles enableStyle={true}/>
+      <InlineStyle/>
+      <h3 className="error">Error</h3>
+      <h3 className={Styles.success}>Success</h3>
+    {/*  <PersonList/>
+      <GreetUser/>
       <ParentComponent/>
       <FunctionClick/>
       <ClassClick/>
