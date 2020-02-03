@@ -16,15 +16,17 @@ import CssStyles from './Components/CssStyles'
 import InlineStyle from './Components/InlineStyle';
 import "./Styles/AppStyles.css"
 import Styles from "./Styles/AppStyles.module.css"
+import Form from "./Components/Form"
 
 function App() {
   return (
     <div className="App">
-      <CssStyles enableStyle={true}/>
+      <Form/>
+      {/*<CssStyles enableStyle={true}/>
       <InlineStyle/>
       <h3 className="error">Error</h3>
       <h3 className={Styles.success}>Success</h3>
-    {/*  <PersonList/>
+      <PersonList/>
       <GreetUser/>
       <ParentComponent/>
       <FunctionClick/>
