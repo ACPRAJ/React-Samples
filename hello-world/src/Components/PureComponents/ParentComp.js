@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PureComp from "./PureComp";
 import RegularComp from "./RegularComp";
+import MemoComp from "./MemoComp";
 
 class ParentComp extends Component {
   constructor(props) {
@@ -47,8 +48,11 @@ class ParentComp extends Component {
     return (
       <div>
         <div>Parent Component {this.state.name}</div>
-        <RegularComp name={this.state.name} />
-        <PureComp name={this.state.name} />
+        <div>
+          <MemoComp name={this.state.name} />
+        </div>
+        {/* <RegularComp name={this.state.name} />
+        <PureComp name={this.state.name} /> */}
         <button onClick={this.onEndTimerClicked}>End Timer</button>
         <button onClick={this.onStartTimerClicked}>Start Timer</button>
       </div>
