@@ -22,12 +22,18 @@ import Fragments from "./Components/Fragments/Fragment";
 import Table from "./Components/Fragments/Table";
 import PureComponent from "./Components/PureComponents/PureComp";
 import ParentComp from "./Components/PureComponents/ParentComp";
+import RefsDemo from "./Components/Refs/RefsDemo";
+import ParentText from "./Components/Refs/ParentText";
+import ParentFRInput from "./Components/Refs/ParentFRInput";
 
 function App() {
   return (
     <div className="App">
+      <ParentFRInput />
+      {/*<ParentText />
+      <RefsDemo />
       <ParentComp />
-      {/*<Fragments/>
+      <Fragments/>
       <Table/>
       <LifeCycleParent/>
       <Form/>
