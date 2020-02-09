@@ -27,10 +27,28 @@ import ParentText from "./Components/Refs/ParentText";
 import ParentFRInput from "./Components/Refs/ParentFRInput";
 import Hero from "./Components/ErrorBoundary/Hero";
 import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
+import ClickCounter from "./Components/HigherOrderComponents/ClickCounter";
+import HoverCounter from "./Components/HigherOrderComponents/HoverCounter";
+import ClickCounter2 from "./Components/PropsRender/ClickCounter2";
+import WithCounter2 from "./Components/PropsRender/WithCounter2";
+import HoverCounter2 from "./Components/PropsRender/HoverCounter2";
 
 function App() {
   return (
     <div className="App">
+      <WithCounter2 incrementStep="2">
+        {(count, fnIncrementCount) => (
+          <ClickCounter2 count={count} fnIncrementCount={fnIncrementCount} />
+        )}
+      </WithCounter2>
+
+      <WithCounter2 incrementStep="10">
+        {(count, fnIncrementCount) => (
+          <HoverCounter2 count={count} fnIncrementCount={fnIncrementCount} />
+        )}
+      </WithCounter2>
+      {/*<ClickCounter name="ACPRAJ" />
+      <HoverCounter />
       <ErrorBoundary>
         <Hero heroName="Spider Man" />
       </ErrorBoundary>
@@ -40,7 +58,7 @@ function App() {
       <ErrorBoundary>
         <Hero heroName="Joker" />
       </ErrorBoundary>
-      {/*<ParentFRInput />
+      <ParentFRInput />
       <ParentText />
       <RefsDemo />
       <ParentComp />
