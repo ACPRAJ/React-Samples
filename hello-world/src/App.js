@@ -32,11 +32,18 @@ import HoverCounter from "./Components/HigherOrderComponents/HoverCounter";
 import ClickCounter2 from "./Components/PropsRender/ClickCounter2";
 import WithCounter2 from "./Components/PropsRender/WithCounter2";
 import HoverCounter2 from "./Components/PropsRender/HoverCounter2";
+import ComponentC from "./Components/Context/ComponentC";
+import { UsernameProvider } from "./Components/Context/userContext"
+import ComponentE from "./Components/Context/ComponentE";
 
 function App() {
   return (
     <div className="App">
-      <WithCounter2 incrementStep="2">
+      <UsernameProvider value="ACPRAJ">
+        <ComponentC />
+      </UsernameProvider>
+      <ComponentE />
+      {/*<WithCounter2 incrementStep="2">
         {(count, fnIncrementCount) => (
           <ClickCounter2 count={count} fnIncrementCount={fnIncrementCount} />
         )}
@@ -47,7 +54,7 @@ function App() {
           <HoverCounter2 count={count} fnIncrementCount={fnIncrementCount} />
         )}
       </WithCounter2>
-      {/*<ClickCounter name="ACPRAJ" />
+      <ClickCounter name="ACPRAJ" />
       <HoverCounter />
       <ErrorBoundary>
         <Hero heroName="Spider Man" />
