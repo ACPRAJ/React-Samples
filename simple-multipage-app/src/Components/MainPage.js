@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Login from './Login'
+import Header from './Header'
+import Footer from './Footer'
 
 class MainPage extends Component {
     constructor(props) {
@@ -20,8 +22,10 @@ class MainPage extends Component {
         if (this.state.isLoggedIn)
             return (
                 <div>
+                    <Header />
                     <div>This is Main Page</div>
                     <button onClick={this.onLogoutClicked}>Logout</button>
+                    <Footer />
                 </div>
             )
         else

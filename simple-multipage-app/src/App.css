@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.Header {
+  display: flex;
+  justify-content: space-around; 
+  min-height: 10%;
+  background: blanchedalmond;
+  color: black;
+}
+
+.Header > .Header-Heading {
+  vertical-align: center !important;
+}
+
+.Logout-Header {
+  width: auto;
+  height: 20px;
+  vertical-align: bottom;
+  
+}
+
+
+.Footer {
+  min-height: 5%;
+  /* align-self: baseline; */
+  display: flex;
+  background: blanchedalmond;
+}
