@@ -39,13 +39,16 @@
 
 .Header {
   display: flex;
-  justify-content: space-around; 
-  min-height: 10%;
+  /* flex-direction: column; */
+  align-items: center;
+  /*justify-content: center;*/
+  min-height: 10vh;
   background: blanchedalmond;
+  background-image: linear-gradient(rgb(1, 92, 1) rgb(255, 255, 0));
   color: black;
 }
 
-.Header > .Header-Heading {
+.Header-Heading {
   vertical-align: center !important;
 }
 
@@ -53,13 +56,17 @@
   width: auto;
   height: 20px;
   vertical-align: bottom;
-  
 }
-
 
 .Footer {
   min-height: 5%;
   /* align-self: baseline; */
   display: flex;
   background: blanchedalmond;
+}
+
+.Logout-button {
+  background: lightcoral;
+  color: cornsilk;
+  border-color: cornsilk;
 }

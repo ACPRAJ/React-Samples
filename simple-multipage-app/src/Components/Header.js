@@ -1,18 +1,16 @@
-import React, { Component } from 'react'
-import "../App.css"
+import React, { Component } from "react";
+import "../App.css";
 
 class Header extends Component {
-    render() {
-        return (
-            <div className="Header">
-                <h1 className="Header-Heading">Home Page</h1>
-                <ul>
-                    <li><button className="Logout-Header">Logout</button></li>
-                </ul>
-
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="Header">
+        <center>Center tag</center>
+        <h1>Home Page</h1>
+        <button className="Logout-button">Logout</button>
+      </div>
+    );
+  }
 }
 
-export default Header
+export default Header;
