@@ -75,9 +75,13 @@
   border-style: solid;
   border-color: black;
   border-width: medium;
-  width: fit-content;
+  /* width: fit-content; */
   padding: 15px;
   margin: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 }
 
 .login-buttons-div {
@@ -89,3 +93,13 @@
 .form-label {
   border: none;
 }
+
+.btn-curved {
+  border-radius: 10px !important;
+  margin: 5px;
+}
+
+/* .btn-curved:hover {
+  background-color: indianred !important;
+  color: indigo !important;
+} */
