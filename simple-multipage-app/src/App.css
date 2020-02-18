@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -39,9 +39,9 @@
 
 .Header {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column; 
   align-items: center;
-  /*justify-content: center;*/
+  justify-content: center;
   min-height: 10vh;
   background: blanchedalmond;
   background-image: linear-gradient(rgb(1, 92, 1) rgb(255, 255, 0));
@@ -60,7 +60,7 @@
 
 .Footer {
   min-height: 5%;
-  /* align-self: baseline; */
+  align-self: baseline; 
   display: flex;
   background: blanchedalmond;
 }
@@ -69,4 +69,23 @@
   background: lightcoral;
   color: cornsilk;
   border-color: cornsilk;
+} */
+
+.login-div {
+  border-style: solid;
+  border-color: black;
+  border-width: medium;
+  width: fit-content;
+  padding: 15px;
+  margin: auto;
+}
+
+.login-buttons-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-control,
+.form-label {
+  border: none;
 }

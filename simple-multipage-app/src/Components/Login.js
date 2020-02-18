@@ -25,7 +25,7 @@ class Login extends Component {
             this.setState({
                 isLoggedIn: true
             })
-            console.log(this.state)
+            console.log(this.props.history);
             return;
         }
 
@@ -37,11 +37,6 @@ class Login extends Component {
             username: "",
             password: ""
         })
-    }
-
-    componentDidUpdate() {
-        if (this.setState.isLoggedIn)
-            console.log("Logged in")
     }
 
     componentDidMount() {
@@ -58,21 +53,24 @@ class Login extends Component {
             )
         else
             return (
-                <div>
-                    <div>
-                        <label>Username: </label>
-                        <input type="text" name="username" onChange={this.onChangeHandler} value={this.state.username} />
-                    </div>
-                    <div>
-                        <label>Password: </label>
-                        <input type="password" name="password" onChange={this.onChangeHandler} value={this.state.password} />
-                    </div>
-                    <div>
-                        <button onClick={this.onLoginButtonClicked}>Login</button>
-                        &nbsp; &nbsp;
-                    <button onClick={this.onResetButtonClicked}>Reset</button>
-                    </div>
-                </div>
+                <div className="login-div">
+                    <form>
+                        <div className="form-group">
+                            <label className="form-label">Username</label>
+                            <input className="form-control" type="text" name="username" id="txtUserName"
+                                onChange={this.onChangeHandler} value={this.state.username} />
+                        </div>
+                        <div className="form-group">
+                            <label className="form-label">Password</label>
+                            <input className="form-control" type="password" name="password"
+                                onChange={this.onChangeHandler} value={this.state.password} />
+                        </div>
+                        <div className="login-buttons-div" >
+                            <button className="btn btn-info" onClick={this.onLoginButtonClicked}>Login</button>
+                            <button className="btn btn-info" onClick={this.onResetButtonClicked}>Reset</button>
+                        </div>
+                    </form>
+                </div >
             )
     }
 }
