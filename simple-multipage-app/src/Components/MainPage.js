@@ -31,15 +31,12 @@ class MainPage extends Component {
               <h1 >Header Text</h1>
               {/* <label className="card-title">Header Text</label> */}
               <a href="#" className="btn btn-sm btn-info btn-curved logout-button"
-                onClick={this.Alert}>Logout</a>
+                onClick={this.onLogoutClicked}>Logout</a>
             </div>
           </div>
 
           <div className="card-body">
-            <div>This is Main Page</div>
-            <button onClick={this.onLogoutClicked} className="Logout-button">
-              Logout
-            </button>
+            <h3>This is Main Page</h3>
           </div>
 
           <div className="card-footer footer-div" >
