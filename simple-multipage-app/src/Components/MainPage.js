@@ -18,17 +18,34 @@ class MainPage extends Component {
     });
   };
 
+  Alert = () => {
+    alert("Logout Button Clicked")
+  }
+
   render() {
     if (this.state.isLoggedIn)
       return (
-        <div>
-          <Header />
-          <div>This is Main Page</div>
-          <button onClick={this.onLogoutClicked} className="Logout-button">
-            Logout
-          </button>
-          <Footer />
-        </div>
+        <div className="card" >
+          <div className="card-header">
+            <div>
+              <h1 >Header Text</h1>
+              {/* <label className="card-title">Header Text</label> */}
+              <a href="#" className="btn btn-sm btn-info btn-curved logout-button"
+                onClick={this.Alert}>Logout</a>
+            </div>
+          </div>
+
+          <div className="card-body">
+            <div>This is Main Page</div>
+            <button onClick={this.onLogoutClicked} className="Logout-button">
+              Logout
+            </button>
+          </div>
+
+          <div className="card-footer footer-div" >
+            Footer text
+          </div>
+        </div >
       );
     else return <Login />;
   }

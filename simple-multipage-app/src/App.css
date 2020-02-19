@@ -63,13 +63,13 @@
   align-self: baseline; 
   display: flex;
   background: blanchedalmond;
-}
+}*/
 
-.Logout-button {
-  background: lightcoral;
-  color: cornsilk;
-  border-color: cornsilk;
-} */
+.logout-button {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+}
 
 .login-div {
   border-style: solid;
@@ -103,3 +103,10 @@
   background-color: indianred !important;
   color: indigo !important;
 } */
+
+.footer-div {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: honeydew !important;
+}

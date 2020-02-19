@@ -10,8 +10,8 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <Login />
-      {/* <MainPage /> */}
+      {/* <Login /> */}
+      <MainPage />
     </div>
   );
 }
