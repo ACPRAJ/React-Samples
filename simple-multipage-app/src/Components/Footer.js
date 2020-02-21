@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer-div">
-        <label className="footer-text">Footer Text</label>
+        <label className="footer-text">This site is designed & maintained by ACPRAJ</label>
       </div>
     );
   }
