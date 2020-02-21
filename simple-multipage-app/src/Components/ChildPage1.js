@@ -8,14 +8,14 @@ export class ChildPage1 extends Component {
     this.refTable1 = React.createRef();
     this.state = {
       data: [
-        {
-          id: 1,
-          name: "Name",
-          shortName: "Short name",
-          country: "Country",
-          marketPlace: "Market Place",
-          timezone: "Time Zone"
-        }
+        // {
+        //   id: 1,
+        //   name: "Name",
+        //   shortName: "Short name",
+        //   country: "Country",
+        //   marketPlace: "Market Place",
+        //   timeZone: "Time Zone"
+        // }
       ]
     };
   }
@@ -24,8 +24,8 @@ export class ChildPage1 extends Component {
     axios
       .get("https://exchangewebsiteapi.azurewebsites.net/exchangeDetails")
       .then(response => {
-        console.log(this.refTable1);
         console.log(response);
+        this.setState({ data: response.data });
       })
       .catch(exception => {
         alert("Error while fetching data");
@@ -33,6 +33,7 @@ export class ChildPage1 extends Component {
   }
 
   render() {
+    const data = this.state.data;
     return (
       <div className="card-body">
         <h3 className="card-title text-center">Content Area</h3>
@@ -53,24 +54,16 @@ export class ChildPage1 extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {data.map(item => (
+              <tr key={item.id}>
+                <th scope="row">{item.id}</th>
+                <td>{item.name}</td>
+                <td>{item.shortName}</td>
+                <td>{item.country}</td>
+                <td>{item.marketPlace}</td>
+                <td>{item.timeZone}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
