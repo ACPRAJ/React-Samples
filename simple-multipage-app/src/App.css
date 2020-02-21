@@ -67,8 +67,13 @@
 
 .logout-button {
   position: absolute;
-  right: 0;
+  right: 5px;
+  top: 10px;
   display: inline-block;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: darkred;
+  color: white;
 }
 
 .login-div {
@@ -104,9 +109,64 @@
   color: indigo !important;
 } */
 
+.header-div {
+  position: fixed;
+  background-color: blanchedalmond;
+  color: darkred;
+  height: 60px;
+  width: 100%;
+  top: 0px;
+  z-index: 101;
+  left: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding-left: 0px;
+  box-shadow: 0 2px 4px rgba(33, 33, 33, 0.2);
+}
+
 .footer-div {
   position: fixed;
-  bottom: 0;
+  background-color: blanchedalmond;
+  color: darkred;
+  height: 30px;
   width: 100%;
-  background-color: honeydew !important;
+  z-index: 101;
+  bottom: 0px;
+  left: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding-left: 0px;
+}
+
+.left-panel-div {
+  height: calc(100vh - 90px);
+  margin-top: 60px;
+  padding-top: 20px;
+  box-shadow: 2px 0px 4px rgba(33, 33, 33, 0.2);
+  float: left;
+  padding-left: 10px;
+  width: 225px;
+  background-color: white;
+  color: darkred;
+}
+
+.header-text {
+  display: block;
+  text-align: center;
+}
+
+.footer-text {
+  display: block;
+  text-align: center;
+}
+
+.content-area {
+  margin-top: 80px;
+  width: calc(100vw - 260px);
+  float: left;
+  padding: 5px;
+}
+
+.panel-items {
+  list-style: none;
 }
