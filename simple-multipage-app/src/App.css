@@ -76,6 +76,10 @@
   color: white;
 }
 
+.logout-button:hover {
+  text-decoration: underline  ;
+}
+
 .login-div {
   border-style: solid;
   border-color: black;
@@ -169,4 +173,5 @@
 
 .panel-items {
   list-style: none;
+  margin-bottom: 15px;
 }

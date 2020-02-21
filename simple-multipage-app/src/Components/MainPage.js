@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Login from "./Login";
 import Header from "./Header";
 import Footer from "./Footer";
+import ChildPage1 from "./ChildPage1";
+import ChildPage2 from "./ChildPage2";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class MainPage extends Component {
   constructor(props) {
@@ -22,26 +25,29 @@ class MainPage extends Component {
     if (this.state.isLoggedIn)
       return (
         <div>
-          <Header />
+          <Header fnOnLogoutClicked={this.onLogoutClicked} />
 
           <div className="left-panel-div">
             <ul>
               <li className="panel-items">
-                <a href="#">Link 1</a>
+                <a href="/ChildPage1" className="btn btn-info btn-sm">Page 1</a>
               </li>
               <li className="panel-items">
-                <a href="#">Link 2</a>
+                <a href="/ChildPage2" className="btn btn-info btn-sm">Page 2</a>
               </li>
             </ul>
           </div>
 
           <div className="content-area">
-            <div className="card-body">
-              <h3 className="card-title text-center">Content Area</h3>
-              <h4 className="card-text text-center">Link 1</h4>
-            </div>
+            <label>{JSON.stringify(this.state)}</label>
+            <Router>
+              <Switch>
+                <Route path="/" exact component={ChildPage1} />
+                <Route path="/ChildPage1" component={ChildPage1} />
+                <Route path="/ChildPage2" component={ChildPage2} />
+              </Switch>
+            </Router>
           </div>
-          {/*  */}
 
           <Footer />
         </div>
