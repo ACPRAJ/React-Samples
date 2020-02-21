@@ -87,7 +87,6 @@ class Login extends Component {
               </button>
             </div>
           </form>
-          <label>{JSON.stringify(this.state)}</label>
         </div>
       );
   }
