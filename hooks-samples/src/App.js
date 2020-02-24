@@ -9,12 +9,16 @@ import ConditionalRender from "./Components/Use-Effect/ConditionalRender";
 import RenderOnlyOnce from "./Components/Use-Effect/RenderOnlyOnce";
 import MouseContainer from "./Components/Use-Effect/MouseContainer";
 import HooksPropsDependency from "./Components/Use-Effect/HooksPropsDependency";
+import SimpleDataFetcher from "./Components/Data-Fetching/SimpleDataFetcher";
+import FetchOnePost from "./Components/Data-Fetching/FetchOnePost";
 
 function App() {
   return (
     <div className="App">
+      <FetchOnePost />
+      {/*<SimpleDataFetcher />
       <HooksPropsDependency />
-      {/*<MouseContainer />
+      <MouseContainer />
       <RenderOnlyOnce />
       <ConditionalRender />
       <HookCounter />
