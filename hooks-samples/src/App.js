@@ -18,6 +18,7 @@ import MultipleUseReducer from "./Components/Use-Reducer/MultipleUseReducer";
 import ComponentA1 from "./Components/Use-Reducer&Use-Context/ComponentA1";
 import ComponentD1 from "./Components/Use-Reducer&Use-Context/ComponentD1";
 import { useReducer } from "react";
+import DataFetcher from "./Components/Use-Reducer/DataFetcher";
 
 export const UserContext = React.createContext();
 export const RoleContext = React.createContext();
@@ -46,13 +47,16 @@ function App() {
   const [count, dispatch] = useReducer(reducer, initialCount);
   return (
     <div className="App">
-      <CountContext.Provider
+      <DataFetcher />
+
+      {/*Example for userReducer & context*/}
+      {/* <CountContext.Provider
         value={{ countState: count, dispatchFn: dispatch }}
       >
         <div>Count: {count}</div>
         <ComponentA1 />
         <ComponentD1 />
-      </CountContext.Provider>
+      </CountContext.Provider> */}
 
       {/* <MultipleUseReducer /> */}
       {/* <CounterWithObjects /> */}
