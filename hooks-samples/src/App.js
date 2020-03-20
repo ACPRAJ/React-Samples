@@ -19,6 +19,10 @@ import ComponentA1 from "./Components/Use-Reducer&Use-Context/ComponentA1";
 import ComponentD1 from "./Components/Use-Reducer&Use-Context/ComponentD1";
 import { useReducer } from "react";
 import DataFetcher from "./Components/Use-Reducer/DataFetcher";
+import UCParentComponent from "./Components/Use-Callback/UCParentComponent";
+import UMCounter from "./Components/Use-Memo/UMCounter";
+import InputFocus from "./Components/Use-Ref/InputFocus";
+import RefTimer from "./Components/Use-Ref/RefTimer";
 
 export const UserContext = React.createContext();
 export const RoleContext = React.createContext();
@@ -47,7 +51,17 @@ function App() {
   const [count, dispatch] = useReducer(reducer, initialCount);
   return (
     <div className="App">
-      <DataFetcher />
+      {/* Example for Use Ref */}
+      {/* <InputFocus /> */}
+      <RefTimer />
+
+      {/* Example for UseMemo */}
+      {/* <UMCounter /> */}
+
+      {/* Example for Use Callback */}
+      {/* <UCParentComponent /> */}
+
+      {/* <DataFetcher /> */}
 
       {/*Example for userReducer & context*/}
       {/* <CountContext.Provider
