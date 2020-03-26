@@ -23,6 +23,8 @@ import UCParentComponent from "./Components/Use-Callback/UCParentComponent";
 import UMCounter from "./Components/Use-Memo/UMCounter";
 import InputFocus from "./Components/Use-Ref/InputFocus";
 import RefTimer from "./Components/Use-Ref/RefTimer";
+import DocTitle1 from "./Components/Custom-Hooks/DocTitle1";
+import DocTitle2 from "./Components/Custom-Hooks/DocTitle2";
 
 export const UserContext = React.createContext();
 export const RoleContext = React.createContext();
@@ -51,9 +53,13 @@ function App() {
   const [count, dispatch] = useReducer(reducer, initialCount);
   return (
     <div className="App">
+      {/* Example for Custom Hooks */}
+      <DocTitle1 />
+      <DocTitle2 />
+
       {/* Example for Use Ref */}
       {/* <InputFocus /> */}
-      <RefTimer />
+      {/* <RefTimer /> */}
 
       {/* Example for UseMemo */}
       {/* <UMCounter /> */}
