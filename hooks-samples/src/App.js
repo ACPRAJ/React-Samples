@@ -25,6 +25,9 @@ import InputFocus from "./Components/Use-Ref/InputFocus";
 import RefTimer from "./Components/Use-Ref/RefTimer";
 import DocTitle1 from "./Components/Custom-Hooks/DocTitle1";
 import DocTitle2 from "./Components/Custom-Hooks/DocTitle2";
+import CHCounter from "./Components/Custom-Hooks/CH-Counter";
+import CHCounter2 from "./Components/Custom-Hooks/CH-Counter2";
+import CHInput from "./Components/Custom-Hooks/CHInput";
 
 export const UserContext = React.createContext();
 export const RoleContext = React.createContext();
@@ -47,15 +50,22 @@ const reducer = (count, action) => {
 function App() {
   const Person = {
     UserName: "ACPRAJ",
-    Sex: "Male"
+    Sex: "Male",
   };
 
   const [count, dispatch] = useReducer(reducer, initialCount);
   return (
     <div className="App">
+      {/* Custom Hooks - First Name & Last Name  */}
+      <CHInput />
+
+      {/* Custom Hooks - Counter example */}
+      {/* <CHCounter />
+      <CHCounter2 /> */}
+
       {/* Example for Custom Hooks */}
-      <DocTitle1 />
-      <DocTitle2 />
+      {/* <DocTitle1 />
+      <DocTitle2 /> */}
 
       {/* Example for Use Ref */}
       {/* <InputFocus /> */}
