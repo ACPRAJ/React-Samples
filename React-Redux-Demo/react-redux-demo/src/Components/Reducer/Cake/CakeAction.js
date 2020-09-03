@@ -1,4 +1,4 @@
-import { BUY_CAKE, RETURN_CAKE } from "./CakeType.js";
+import { BUY_CAKE, RETURN_CAKE } from "./CakeConstants.js";
 
 export const buyCake = () => {
   return {

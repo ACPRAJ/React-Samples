@@ -1,4 +1,4 @@
-const { BUY_CAKE, RETURN_CAKE } = require("./CakeType");
+import { BUY_CAKE, RETURN_CAKE } from "./CakeConstants";
 
 const initialCakeState = {
   numberOfCakes: 10,
