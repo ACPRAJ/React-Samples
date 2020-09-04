@@ -9,13 +9,15 @@ const cakeReducer = (state = initialCakeState, action) => {
     case BUY_CAKE:
       return {
         ...state,
-        numberOfCakes: state.numberOfCakes - 1,
+        numberOfCakes: state.numberOfCakes - action.payload,
       };
 
     case RETURN_CAKE:
       return {
         ...state,
-        numberOfCakes: state.numberOfCakes + 1,
+        numberOfCakes:
+          Number.parseInt(state.numberOfCakes, 10) +
+          Number.parseInt(action.payload, 10),
       };
 
     default:
