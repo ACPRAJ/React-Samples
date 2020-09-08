@@ -7,7 +7,7 @@ function UserContainer({ userData, fetchUsers }) {
     fetchUsers();
   }, []);
 
-  console.log(`${userData.users}`);
+  const userId = 0;
   return userData.loading ? (
     <h2>Loading...</h2>
   ) : userData.error ? (
@@ -16,9 +16,17 @@ function UserContainer({ userData, fetchUsers }) {
     <div>
       <h1>Users</h1>
       <div>
-        {userData && userData.users.length > 0
-          ? userData.users.map((item) => <h2>{item}</h2>)
-          : "Error: " + userData.errorMsg}
+        {userData && userData.users.length > 0 ? (
+          <ul>
+            {userData.users.map((item) => (
+              <li key={item}>
+                <h2>{item}</h2>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          "Error: " + userData.errorMsg
+        )}
       </div>
     </div>
   );
