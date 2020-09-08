@@ -10,13 +10,13 @@ function UserContainer({ userData, fetchUsers }) {
   const userId = 0;
   return userData.loading ? (
     <h2>Loading...</h2>
-  ) : userData.error ? (
-    <h2>{userData.error}</h2>
+  ) : userData.errorMsg ? (
+    <h2>{"Error: " + userData.errorMsg}</h2>
   ) : (
     <div>
       <h1>Users</h1>
       <div>
-        {userData && userData.users.length > 0 ? (
+        {userData && userData.users.length > 0 && (
           <ul>
             {userData.users.map((item) => (
               <li key={item}>
@@ -24,8 +24,6 @@ function UserContainer({ userData, fetchUsers }) {
               </li>
             ))}
           </ul>
-        ) : (
-          "Error: " + userData.errorMsg
         )}
       </div>
     </div>
