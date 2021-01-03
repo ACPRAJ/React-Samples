@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function ChildComponent(props) {
   const { onChildComponentUpdate, parentText } = props;
-  const [text, setText] = useState(parentText);
+  const [text, setText] = useState("");
 
   const onButtonClick = () => {
     onChildComponentUpdate(text);
   };
+
+  useEffect(() => {
+    setText(parentText);
+  }, [parentText])
 
   return (
     <div>

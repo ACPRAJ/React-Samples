@@ -10,6 +10,7 @@ function ParentComponent() {
   };
 
   const onChildUpdated = (text) => {
+    setTxtString(text);
     alert(`Upadted child value: ${text}`);
   };
 
