@@ -1,5 +1,5 @@
 import React from "react";
-import { useFormik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const initialValues = {
@@ -21,60 +21,36 @@ const validationSchema = Yup.object({
 });
 
 function YouTubeForm() {
-  const formik = useFormik({
-    initialValues,
-    onSubmit,
-    validationSchema,
-  });
-
-  console.log("Form Visits", formik.touched);
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+      <Form>
         <div className="form-control">
           <label htmlFor="txtName">Name</label>
-          <input
-            type="text"
-            id="txtName"
-            name="txtName"
-            {...formik.getFieldProps("txtName")}
-          ></input>
-          {formik.touched.txtName && formik.errors.txtName ? (
-            <div className="error">{formik.errors.txtName}</div>
-          ) : null}
+          <Field type="text" id="txtName" name="txtName"></Field>
+          <ErrorMessage name="txtName" />
         </div>
 
         <div className="form-control">
           <label htmlFor="txtEMail">E-Mail</label>
-          <input
-            type="email"
-            id="txtEMail"
-            name="txtEMail"
-            {...formik.getFieldProps("txtEMail")}
-          ></input>
-          {formik.touched.txtEMail && formik.errors.txtEMail ? (
-            <div className="error">{formik.errors.txtEMail}</div>
-          ) : null}
+          <Field type="email" id="txtEMail" name="txtEMail"></Field>
+          <ErrorMessage name="txtEMail" />
         </div>
 
         <div className="form-control">
           <label htmlFor="txtChannel">Channel</label>
-          <input
-            type="text"
-            id="txtChannel"
-            name="txtChannel"
-            {...formik.getFieldProps("txtChannel")}
-          ></input>
-          {formik.touched.txtChannel && formik.errors.txtChannel ? (
-            <div className="error">{formik.errors.txtChannel}</div>
-          ) : null}
+          <Field type="text" id="txtChannel" name="txtChannel"></Field>
+          <ErrorMessage name="txtChannel" />
         </div>
 
         <button id="btnSubmit" type="submit">
           Submit
         </button>
-      </form>
-    </div>
+      </Form>
+    </Formik>
   );
 }
 
