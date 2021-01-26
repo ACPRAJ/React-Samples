@@ -30,6 +30,13 @@ const validationSchema = Yup.object({
   txtAddress: Yup.string().required("Address filed is required"),
 });
 
+const commentsValidator = (value) => {
+  let error;
+  if (!value) error = "Comments is required";
+
+  return error;
+};
+
 function YouTubeForm() {
   return (
     <Formik
@@ -74,8 +81,10 @@ function YouTubeForm() {
             as="textarea"
             id="txtComments"
             name="txtComments"
-            placeholder="Optional comments"
+            validate={commentsValidator}
+            placeholder="Comments"
           />
+          <ErrorMessage name="txtComments" component={ErrorText} />
         </div>
 
         <div className="form-control">
