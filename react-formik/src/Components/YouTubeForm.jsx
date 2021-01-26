@@ -1,18 +1,20 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
 import ErrorText from "./ErrorText";
 
 const initialValues = {
-  txtName: "",
-  txtEMail: "",
-  txtChannel: "",
+  txtName: "Pradheep",
+  txtEMail: "raj@gmail.com",
+  txtChannel: "Channel",
   txtComments: "",
-  txtAddress: "",
+  txtAddress: "Address",
   socialMedia: {
     txtFacebook: "",
     txtTwitter: "",
   },
+  phoneNumbers: ["", ""],
+  phNumbersArray: [""],
 };
 
 const onSubmit = (values) => {
@@ -102,6 +104,46 @@ function YouTubeForm() {
         <div className="form-control">
           <label htmlFor="txtTwitter">Twitter Profile</label>
           <Field type="text" id="txtTwitter" name="social.txtTwitter" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="txtPrimaryPhone">Primary Phone</label>
+          <Field type="text" id="txtPrimaryPhone" name="phoneNumbers[0]" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="txtSecondaryPhone">Secondary Phone</label>
+          <Field type="text" id="txtSecondaryPhone" name="phoneNumbers[1]" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="txtPhNumbersArray">List of phone numbers</label>
+          <FieldArray id="txtPhNumbersArray" name="phNumbersArray">
+            {(fieldProps) => {
+              const { push, remove, form } = fieldProps;
+              const { values } = form;
+              const { phNumbersArray } = values;
+              //console.log("Field Array Props:", phNumbersArray);
+
+              return (
+                <div>
+                  {phNumbersArray.map((item, key) => (
+                    <div key={key}>
+                      <Field type="tel" name={`phNumbersArray[${key}]`} />
+                      <button type="button" onClick={() => push("")}>
+                        +
+                      </button>
+                      {key !== 0 && (
+                        <button type="button" onClick={() => remove(key)}>
+                          -
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              );
+            }}
+          </FieldArray>
         </div>
 
         <button id="btnSubmit" type="submit">
