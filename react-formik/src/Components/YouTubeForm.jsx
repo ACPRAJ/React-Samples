@@ -175,6 +175,7 @@ function YouTubeForm() {
         <button type="button" onClick={() => setFormValues(savedValues)}>
           Load Saved Data
         </button>
+        <button type="reset">Reset</button>
         <button id="btnSubmit" type="submit">
           Submit
         </button>
