@@ -1,12 +1,12 @@
-import './App.css';
-import { UseReducer } from './Components/UseReducer';
+import "./App.css"
+import { ParentTwo } from "./Components/Optimized Components/ParentTwo"
 
 function App() {
   return (
     <div className="App">
-      <UseReducer/>
+      <ParentTwo />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
