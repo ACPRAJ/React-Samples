@@ -1,11 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useMemo, useCallback } from "react"
 import { MemoizedChildFive } from "./ChildFive"
 
 /*****************************************************************************
  * INVALID USE OF MEMO
  *
  * When a function or a reference (like an object) is passed to the child
- * as props then Memo will not work out.
+ * as props then React.Memo will not work out.
+ *
+ * To optimise reference use useMemo hook and to optimise functions
+ * use useCallback hook
  ******************************************************************************/
 
 export const ParentFour = () => {
@@ -17,9 +20,13 @@ export const ParentFour = () => {
     lName: "Bond",
   }
 
+  const memoizedPerson = useMemo(() => person, [])
+
   const onChildButtonClick = () => {
     alert("Child Five Button Clicked")
   }
+
+  const memoizedButtonClick = useCallback(onChildButtonClick, [])
 
   console.log("ParentFour Render")
   return (
@@ -30,8 +37,10 @@ export const ParentFour = () => {
       <button onClick={() => setName("RAJ")}>Change Name - {name}</button>
       <MemoizedChildFive
         name={name}
-        person={person}
-        buttonClick={onChildButtonClick}
+        person={memoizedPerson}
+        buttonClick={memoizedButtonClick}
+        //person={person}
+        //buttonClick={onChildButtonClick}
       />
     </div>
   )
