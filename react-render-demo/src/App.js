@@ -1,10 +1,13 @@
 import "./App.css"
-import { ParentFour } from "./Components/Incorrect Optimization/ParentFour"
+import { ChildA } from "./Components/Context Optimization/ChildrenContext"
+import { ParentContext } from "./Components/Context Optimization/ParentContext"
 
 function App() {
   return (
     <div className="App">
-      <ParentFour />
+      <ParentContext>
+        <ChildA />
+      </ParentContext>
     </div>
   )
 }
